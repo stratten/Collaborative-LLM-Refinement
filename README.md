@@ -4,12 +4,12 @@ A proof-of-concept Electron application that demonstrates collaborative prompt r
 
 ## Features
 
-🤖 **Multi-LLM Support**: Works with OpenAI (GPT-4o, GPT-4 Turbo) and Anthropic (Claude 3.5 Sonnet) models
-🔍 **Intelligent Prompt Analysis**: Analyzes initial prompts for clarity, completeness, and specificity
-❓ **Interactive Clarification**: Asks follow-up questions when prompts need refinement
-🔄 **Iterative Refinement**: Multiple rounds of critique and improvement between models
-📊 **Process Visualization**: Real-time timeline showing the refinement process
-✨ **Clean UI**: Modern, responsive interface with progress tracking
+**Multi-LLM Support**: Works with OpenAI (GPT-4o, GPT-4 Turbo) and Anthropic (Claude 3.5 Sonnet) models
+**Intelligent Prompt Analysis**: Analyzes initial prompts for clarity, completeness, and specificity
+**Interactive Clarification**: Asks follow-up questions when prompts need refinement
+**Iterative Refinement**: Multiple rounds of critique and improvement between models
+**Process Visualization**: Real-time timeline showing the refinement process
+**Clean UI**: Modern, responsive interface with progress tracking
 
 ## Workflow
 
