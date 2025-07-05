@@ -1,0 +1,394 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    border-bottom: 2px solid #e3f2fd;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #555;
+}
+
+input[type="text"], 
+input[type="password"], 
+textarea, 
+select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, 
+textarea:focus, 
+select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #5a67d8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary {
+    background: #667eea;
+}
+
+.btn-success {
+    background: #48bb78;
+}
+
+.btn-success:hover {
+    background: #38a169;
+}
+
+.btn-secondary {
+    background: #718096;
+}
+
+.btn-secondary:hover {
+    background: #4a5568;
+}
+
+.configuration {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.config-group {
+    margin-bottom: 20px;
+}
+
+.config-group h3 {
+    margin-bottom: 15px;
+    color: #2d3748;
+}
+
+.model-config {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+@media (max-width: 900px) {
+    .model-config {
+        grid-template-columns: 1fr;
+    }
+}
+
+.model-config label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.help-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+    font-style: italic;
+    line-height: 1.3;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.progress {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.process-timeline {
+    space-y: 15px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #f7fafc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 4px solid #e2e8f0;
+}
+
+.timeline-item.active {
+    border-left-color: #667eea;
+    background: #eef7ff;
+}
+
+.timeline-item.completed {
+    border-left-color: #48bb78;
+    background: #f0fff4;
+}
+
+.timeline-icon {
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.timeline-content h4 {
+    margin-bottom: 5px;
+    color: #2d3748;
+}
+
+.timeline-content p {
+    color: #4a5568;
+    font-size: 14px;
+}
+
+.result-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.result-column h3 {
+    margin-bottom: 15px;
+    color: #2d3748;
+}
+
+.result-box {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 150px;
+    white-space: pre-wrap;
+    font-family: 'SF Mono', Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.result-box.large {
+    min-height: 300px;
+}
+
+.final-output {
+    margin-bottom: 30px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.clarification-question {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.clarification-question h4 {
+    margin-bottom: 10px;
+    color: #2d3748;
+}
+
+.clarification-answer {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: white;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ffffff30;
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loading-text {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .model-config {
+        grid-template-columns: 1fr;
+    }
+    
+    .result-comparison {
+        grid-template-columns: 1fr;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Progress Status Display */
+.current-status {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.current-status h3 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.status-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.phase-icon {
+    font-size: 1.2rem;
+}
+
+.phase-text {
+    font-weight: 500;
+    color: #495057;
+}
+
+.iteration-info {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.model-info {
+    color: #007bff;
+    font-size: 0.85rem;
+    font-weight: 500;
+} 

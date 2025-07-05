@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative LLM Refinement</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 Collaborative LLM Refinement</h1>
+            <p>Multi-model prompt refinement and iterative improvement system</p>
+        </header>
+
+        <!-- API Keys Setup -->
+        <section id="api-keys-section" class="card">
+            <h2>🔑 API Keys Configuration</h2>
+            <div class="form-group">
+                <label for="openai-key">OpenAI API Key:</label>
+                <input type="password" id="openai-key" placeholder="sk-...">
+            </div>
+            <div class="form-group">
+                <label for="anthropic-key">Anthropic API Key:</label>
+                <input type="password" id="anthropic-key" placeholder="sk-ant-...">
+            </div>
+            <button id="save-keys-btn" class="btn btn-primary">Save API Keys</button>
+        </section>
+
+        <!-- Initial Prompt Input -->
+        <section id="prompt-section" class="card">
+            <h2>📝 Initial Prompt</h2>
+            <textarea id="initial-prompt" placeholder="Enter your initial prompt here...
+Example: 'Write a technical blog post about machine learning'"></textarea>
+            
+            <div class="configuration">
+                <div class="config-group">
+                    <h3>Model Selection</h3>
+                    <div class="model-config">
+                        <label>
+                            <strong>Primary (Initial Response):</strong>
+                            <select id="primary-model">
+                                <option value="gpt-4o">GPT-4o</option>
+                                <option value="gpt-4-turbo">GPT-4 Turbo</option>
+                                <option value="gpt-4.1" selected>GPT-4.1</option>
+                                <option value="claude-sonnet-4">Claude 4 Sonnet</option>
+                                <option value="claude-3-5-sonnet">Claude 3.5 Sonnet</option>
+                            </select>
+                        </label>
+                        <label>
+                            <strong>Refinement (Critique & Improve):</strong>
+                            <select id="refinement-model">
+                                <option value="claude-sonnet-4">Claude 4 Sonnet</option>
+                                <option value="gpt-4.1">GPT-4.1</option>
+                                <option value="gpt-4o">GPT-4o</option>
+                                <option value="gpt-4-turbo">GPT-4 Turbo</option>
+                                <option value="claude-3-5-sonnet">Claude 3.5 Sonnet</option>
+                            </select>
+                        </label>
+                        <label>
+                            <strong>Final Review:</strong>
+                            <select id="final-review-model">
+                                <option value="auto" selected>Auto-Select Best Available</option>
+                                <option value="claude-sonnet-4">Claude 4 Sonnet (Premium)</option>
+                                <option value="gpt-4.1">GPT-4.1 (Premium)</option>
+                                <option value="gpt-4o">GPT-4o (Advanced)</option>
+                                <option value="gpt-4-turbo">GPT-4 Turbo (Advanced)</option>
+                                <option value="claude-3-5-sonnet">Claude 3.5 Sonnet (Standard)</option>
+                            </select>
+                            <small class="help-text">Choose the model for final review and polish</small>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="config-group">
+                    <h3>Process Configuration</h3>
+                    <label>
+                        <strong>Handoff Strategy:</strong>
+                        <select id="handoff-strategy">
+                            <option value="model_specialization" selected>Model Specialization (Recommended)</option>
+                            <option value="cross_provider">Cross-Provider Collaboration</option>
+                            <option value="capability_based">Capability-Based Progression</option>
+                        </select>
+                        <small class="help-text">How models collaborate during refinement</small>
+                    </label>
+                    <label for="iterations">Number of Refinement Iterations: <span id="iterations-value">3</span></label>
+                    <input type="range" id="iterations" min="1" max="10" value="3">
+                </div>
+            </div>
+            
+            <button id="start-refinement-btn" class="btn btn-success">Start Refinement Process</button>
+        </section>
+
+        <!-- Clarification Questions -->
+        <section id="clarification-section" class="card" style="display: none;">
+            <h2>❓ Clarification Questions</h2>
+            <p>The system needs additional information to refine your prompt:</p>
+            <div id="clarification-questions"></div>
+            <button id="submit-clarification-btn" class="btn btn-primary">Submit Answers</button>
+        </section>
+
+        <!-- Process Timeline -->
+        <section id="process-section" class="card" style="display: none;">
+            <h2>⚙️ Refinement Process</h2>
+            <div class="progress">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <div id="process-timeline"></div>
+        </section>
+
+        <!-- Results -->
+        <section id="results-section" class="card" style="display: none;">
+            <h2>✨ Final Result</h2>
+            <div class="result-comparison">
+                <div class="result-column">
+                    <h3>Original Prompt</h3>
+                    <div id="original-prompt" class="result-box"></div>
+                </div>
+                <div class="result-column">
+                    <h3>Refined Prompt</h3>
+                    <div id="refined-prompt" class="result-box"></div>
+                </div>
+            </div>
+            <div class="final-output">
+                <h3>Final Output</h3>
+                <div id="final-output" class="result-box large"></div>
+            </div>
+            <div class="action-buttons">
+                <button id="copy-result-btn" class="btn btn-secondary">Copy Result</button>
+                <button id="new-session-btn" class="btn btn-primary">Start New Session</button>
+            </div>
+        </section>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" style="display: none;">
+            <div class="spinner"></div>
+            <p id="loading-text">Processing...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,23 @@
+{
+  "name": "collaborative-llm-refinement",
+  "version": "1.0.0",
+  "description": "POC for collaborative prompt refinement and multi-LLM iteration system",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["electron", "llm", "ai", "prompt-refinement", "collaboration"],
+  "author": "Jarvish Team",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^27.0.0",
+    "openai": "^4.24.1",
+    "@anthropic-ai/sdk": "^0.56.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.6.4"
+  }
+} 
